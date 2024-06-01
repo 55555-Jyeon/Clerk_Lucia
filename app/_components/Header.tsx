@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className="container w-screen min-w-full h-20 pt-4 shadow-md">
-      <div className="grid grid-flow-row-dense grid-cols-4">
-        <div className="col-span-3 mt-2">
+      <div className="grid grid-flow-row-dense grid-cols-5">
+        <div className="col-span-4 mt-2">
           <Link href={"/"} className="m-16 text-xl font-semibold text-gray-800">
             Auth Explained 🔑
           </Link>
