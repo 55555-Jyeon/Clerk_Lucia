@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="container w-screen min-w-full h-20 pt-4 shadow-md">
+    <header className="container w-screen min-w-full h-20 pt-4 shadow-md bg-glass-morphism backdrop-blur">
       <div className="grid grid-flow-row-dense grid-cols-5">
         <div className="col-span-4 mt-2">
           <Link href={"/"} className="m-16 text-xl font-semibold text-gray-800">
@@ -11,15 +11,17 @@ export default function Header() {
           </Link>
         </div>
         <div>
-          <ul>
-            <li>
+          <ul className="flex justify-center items-center">
+            <li className="mt-2">
               <SignedIn>
                 <UserButton showName />
               </SignedIn>
             </li>
-            <li className="w-32 h-12 bg-sky-200 rounded-lg flex justify-center">
+            <li>
               <SignedOut>
-                <SignInButton>SignIn</SignInButton>
+                <SignInButton>
+                  <button className="btn btn-primary">sign in</button>
+                </SignInButton>
               </SignedOut>
             </li>
           </ul>
