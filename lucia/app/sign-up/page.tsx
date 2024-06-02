@@ -1,9 +1,11 @@
+import { SignUpAction } from "../actions/signupAction";
+
 export default function SignUpPage() {
   return (
     <div className="flex flex-col justify-center items-center gap-12 mt-20">
       <h1>👩🏻‍💻 Create an Account to be a Member</h1>
       <div className="flex flex-col items-center justify-center gap-10 border-[1.5px] p-12 rounded-xl border-yellow-500">
-        <form className="flex flex-col gap-4 ">
+        <form action={SignUpAction} className="flex flex-col gap-4 ">
           <label className="input input-bordered flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +15,13 @@ export default function SignUpPage() {
             >
               <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
             </svg>
-            <input type="text" className="grow" placeholder="Username" />
+            <input
+              id="username"
+              name="username"
+              type="text"
+              className="grow"
+              placeholder="Username"
+            />
           </label>
           <label className="input input-bordered flex items-center gap-2">
             <svg
@@ -28,7 +36,13 @@ export default function SignUpPage() {
                 clip-rule="evenodd"
               />
             </svg>
-            <input type="password" className="grow" value="password" />
+            <input
+              id="password"
+              name="password"
+              type="password"
+              className="grow"
+              value="password"
+            />
           </label>
           <button className="btn ">Sign Up</button>
         </form>
