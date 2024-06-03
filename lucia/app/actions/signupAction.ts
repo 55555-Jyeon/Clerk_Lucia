@@ -1,5 +1,7 @@
 "use server";
 
+import { hash } from "@node-rs/argon2";
+
 export async function SignUpAction(formData: FormData) {
   console.log("formData", formData);
 
@@ -13,6 +15,15 @@ export async function SignUpAction(formData: FormData) {
     return { error: "Invalid password!" };
 
   // hash password
+  const hashedPW = await hash(password, {
+    memoryCost: 19485,
+    timeCost: 2,
+    outputLen: 32, // default
+    parallelism: 1, // default
+  });
+
+  // check
+  console.log("hashed?", { hashedPW });
 
   // insert user to userCollection(DB)
 
